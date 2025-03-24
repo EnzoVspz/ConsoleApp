@@ -8,6 +8,49 @@ class Programm
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("oui");
+        ISet<String> mois = new HashSet<String>();
+
+        mois.Add("Janvier");
+        mois.Add("Fevrier");
+        mois.Add("Mars");
+        mois.Add("Avril");
+        mois.Add("Mai");
+        mois.Add("Juin");
+        mois.Add("Juillet");
+        mois.Add("Aout");
+        mois.Add("Septembre");
+        mois.Add("Octobre");
+        mois.Add("Novembre");
+        mois.Add("Decembre");
+
+        float leSalaireUtilisateur = 75000;
+        float laTax = 37;
+        float taux = 1 - (laTax / 100);
+        float leSalaire = (leSalaireUtilisateur / 12) * taux;
+        float bonus = leSalaire + (leSalaireUtilisateur * 10 / 100);
+        float rien = 0;
+
+        Console.WriteLine("oui");
+        foreach(String s in mois)
+        {
+            if(s == "Decembre")
+            {
+                Console.WriteLine(s + " => " + bonus);
+            }
+            else if(s == "Aout")
+            {
+                Console.WriteLine(s + " => " + rien);
+            }
+            else
+            {
+                Console.WriteLine(s + " => " + leSalaire);
+            }
+        }
+    }
+
+    public static void Un()
+    {
         Console.WriteLine("Votre salaire => ");
         string salaireUtilisateur = Console.ReadLine();
         bool testSalaire = int.TryParse(salaireUtilisateur, out int nombre);
@@ -26,7 +69,7 @@ class Programm
             laTaxUtilisateur = int.Parse(taxUtilisateur);
         }
 
-        if(testSalaire == false || testTax == false)
+        if (testSalaire == false || testTax == false)
         {
             Console.WriteLine("Tant pis pour toi ^^");
         }
@@ -35,7 +78,7 @@ class Programm
             Console.WriteLine("BG en vdv ^^");
         }
 
-        if(leSalaireUtilisateur >= 50000)
+        if (leSalaireUtilisateur >= 50000)
         {
             Console.WriteLine("Fais un don sur ma chaine twitch stp.............................................................");
         }
@@ -43,7 +86,7 @@ class Programm
         {
             Console.WriteLine("T'as pas d'argent mskn");
         }
-        else if(leSalaireUtilisateur >=30000 && leSalaireUtilisateur <= 40000)
+        else if (leSalaireUtilisateur >= 30000 && leSalaireUtilisateur <= 40000)
         {
             Console.WriteLine("Go au CESI hein ^^^^^^^^^^^^^^^^^^^^^^");
         }
